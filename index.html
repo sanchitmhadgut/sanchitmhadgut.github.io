@@ -4,51 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanchit Mhadgut | Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
             margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .container {
-            background: white;
-            margin: 40px auto;
-            padding: 40px;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
+            font-family: "Poppins", sans-serif;
+            background: #f7f9fc;
             color: #333;
         }
-        p {
-            font-size: 18px;
-            color: #555;
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            width: 100%;
+            background: white;
+            top: 0;
+            left: 0;
+            padding: 15px 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            z-index: 10;
         }
-        a {
+        nav h2 {
+            margin: 0;
+            font-weight: 700;
+        }
+        nav a {
+            margin-left: 20px;
             text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+        nav a:hover {
             color: #007bff;
         }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 40px 120px;
+            text-align: center;
+            background: linear-gradient(120deg, #6c63ff, #4ea9ff);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        /* About */
+        .about p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .skill {
+            padding: 12px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: 600;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .project {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+        .project h3 {
+            margin-top: 0;
+        }
+
+        /* Contact */
+        .contact p {
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #eee;
+            margin-top: 20px;
+        }
     </style>
+
 </head>
 <body>
 
-    <div class="container">
-        <h1>Hi, I'm Sanchit 👋</h1>
-        <p>Welcome to my GitHub portfolio website.</p>
+    <!-- Navbar -->
+    <nav>
+        <h2>Sanchit</h2>
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Hello, I'm Sanchit 👋</h1>
+        <p>Embedded Systems Engineer | ESP32 | STM32 | Robotics | Automation</p>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
         <p>
-            I am an Embedded Systems Engineer with experience in ESP32, STM32, RTOS, robotics, and automation.
+            I am an Embedded Systems Engineer passionate about microcontrollers, robotics, automation, 
+            and real-time systems. I have hands-on experience with ESP32, STM32, RTOS, sensor integrations, 
+            PCB design, and IoT systems.  
+            <br><br>
             Currently pursuing MSc InfoTech (Embedded Systems).
         </p>
+    </section>
 
-        <p>
-            🔗 <a href="https://github.com/sanchitmhadgut" target="_blank">My GitHub Profile</a>
-        </p>
-    </div>
+    <!-- Skills -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">ESP32</div>
+            <div class="skill">STM32</div>
+            <div class="skill">RTOS</div>
+            <div class="skill">Embedded C</div>
+            <div class="skill">PCB Design</div>
+            <div class="skill">I2C / SPI / UART</div>
+            <div class="skill">Sensors & Actuators</div>
+            <div class="skill">Robotics</div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="projects-grid">
+            
+            <div class="project">
+                <h3>4-Relay Scheduling PLC (ESP32)</h3>
+                <p>Custom-designed PLC with TCP, UDP, Bluetooth and mobile app control. Supports time slots and automation.</p>
+            </div>
+
+            <div class="project">
+                <h3>2-DOF Helicopter (ESP32)</h3>
+                <p>Control system using cascaded PID loops, encoder for yaw, IMU for pitch.</p>
+            </div>
+
+            <div class="project">
+                <h3>Alarm Clock + Servo Curtain</h3>
+                <p>ESP32 + RTC based smart curtain opener with LEDs and Bluetooth serial interface.</p>
+            </div>
+
+            <div class="project">
+                <h3>HLW8032 Energy Meter</h3>
+                <p>Real-time voltage monitoring system using ESP32 and HLW8032 via Software Serial.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: <b>sanchit@example.com</b></p>
+        <p>GitHub: <a href="https://github.com/sanchitmhadgut" target="_blank">github.com/sanchitmhadgut</a></p>
+    </section>
+
+    <footer>
+        © 2025 Sanchit Mhadgut | All Rights Reserved
+    </footer>
 
 </body>
 </html>
